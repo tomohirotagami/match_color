@@ -20,7 +20,8 @@ html,body {
   height: 100%;
 }
 body {
-  background-color: #fbf7f1 !important;
+  //background: image-url("runa8.jpg") /*no-repeat*/ center center;
+  background-color: #FFFFFF !important;
   padding-top: 60px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -173,7 +174,8 @@ input[type=submit] {
   }
 }
 .login_back {
-    background: image-url("bg.jpg") no-repeat center center;
+    background: image-url("team-lab.png") no-repeat center center;
+    background-color: #FFFFFF !important;
     background-size: cover;
     position: fixed;
     top: 0;
@@ -746,4 +748,8 @@ footer {
       height: auto;
     }
   }
+}
+
+.content_user {
+  height: 160px;
 }

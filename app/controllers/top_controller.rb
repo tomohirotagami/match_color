@@ -3,11 +3,8 @@ class TopController < ApplicationController
   before_action :authenticate_user!, only: :index
 
   def index
-    @users = Top.order("id ASC").page(params[:page]).per(16)
-  end
-
-  def show
-    @user = User.find(params[:id])
+    @users = User.order("id ASC").page(params[:page]).per(14)
+    @page = true
   end
 
   private

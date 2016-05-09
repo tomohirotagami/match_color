@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @edit = true
   end
 
   def update
