@@ -22,3 +22,6 @@
           = f.submit class: 'btn btn-primary withripple', value: 'ログイン'
       .login_link
         = render 'devise/shared/links'
+
+      = link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook)
+

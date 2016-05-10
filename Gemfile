@@ -48,8 +48,14 @@ end
   gem 'html2slim'
   gem 'pry-rails'
   gem 'devise'
+  gem 'omniauth'
+  gem 'omniauth-facebook'
   gem 'paperclip'
   gem 'kaminari'
   gem 'therubyracer'
   gem 'twitter-bootstrap-rails'
   gem 'bootstrap-material-design', '0.1.4'
+group :production, :staging do
+  gem 'rails_12factor'
+  gem 'pg'
+end

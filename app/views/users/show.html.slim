@@ -7,6 +7,23 @@
     = @user.name
     span
       = @user.name_kana
-  - if current_user.id == @user.id
-    .profile_edit
-      = link_to "プロフィール編集", edit_user_path(current_user), {:class => "btn btn-primary withripple" }
+
+.contents.row
+  - @posts.each do |post|
+    .content_post style="background-image: url(= post.image);"
+      ul class="more_list"
+        li
+          = link_to '詳細', "/posts/#{post.id}", method: :get
+        li
+          = link_to '編集', "/posts/#{post.id}/edit", method: :get
+        li
+          = link_to '削除', "/posts/#{post.id}", method: :delete
+      = simple_format(post.text)
+      = image_tag post.image 
+      span.name
+        a href="/users/= post.user_id"
+  = paginate(@posts)
+
+
+
+      

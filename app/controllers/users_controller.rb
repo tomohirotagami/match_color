@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @show = true
+    @posts = @user.posts.includes(:user).page(params[:page]).per(16).order("created_at DESC")
   end
 
   def edit

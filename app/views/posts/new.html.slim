@@ -1,6 +1,6 @@
 .contents.row
-  = form_tag('/posts', method: :post) do
-    h3 投稿する
+  = form_for('/posts', method: :post) do
+    h3 つぶやき
     input placeholder="Image Url" type="text" name="image"
     textarea cols="30" name="text" placeholder="text" rows="10"
-    input type="submit" value="SENT"
+    input type="submit" value="つぶやく"

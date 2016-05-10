@@ -1,4 +1,6 @@
 .contents.row
   .success
-    h3 投稿が完了しました。
-    a.btn href= "/users/#{user.id}" 投稿一覧へ戻る
+    ul
+      h3 つぶやきが完了しました。
+      = link_to "マイページに戻る", user_path(current_user)
+    
