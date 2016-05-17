@@ -3,7 +3,7 @@ class TopController < ApplicationController
   before_action :authenticate_user!, only: :index
 
   def index
-    @users = User.order("id ASC").page(params[:page]).per(14)
+    @users = User.order("id ASC").page(params[:page]).per(12)
     @page = true
   end
 

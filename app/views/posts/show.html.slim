@@ -1,14 +1,26 @@
 .contents.row
-  .content_post style="background-image: url(= @post.image);"
+  .content_post#comment style="background-image: url(= @post.image);"
     - if user_signed_in? && current_user.id == @post.user_id
-      .more
-      ul.more_list
-        li
-          = link_to '編集', "/posts/#{@post.id}/edit", method: :get
-        li
-          = link_to '削除', "/posts/#{@post.id}", method: :delete
-    = simple_format(@post.text)
-    = image_tag @post.image 
-    span.name
-      a href="/users/ = @post.user.id"
+      .more_list
+        ul
+          li
+            = link_to '編集', "/posts/#{@post.id}/edit", method: :get
+          li
+            = link_to '削除', "/posts/#{@post.id}", method: :delete
+    .post_detail
+      = simple_format(@post.text)
+      = image_tag @post.image 
+  .container
+    - if current_user
+      .form
+        = form_tag("/posts/#{@post.id}/comments", method: :post) do
+          textarea cols="30" name="text" placeholder="コメントする" rows="2"
+          input type="submit" value="コメントを送る"
+    .comments   
+      - if @comments
+        - @comments.each do |comment|
+          .comments_name
+            strong = link_to comment.user.name, "/users/#{comment.user_id}"
+          p
+            = comment.text
 

@@ -12,6 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
+//= require bootstrap-material-design
 //= require turbolinks
-//= require bootstrap
 //= require_tree .
+
+$(function(){
+    $.material.init();
+});

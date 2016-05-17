@@ -1,69 +1,21 @@
+h3.text-center.wowload.fadeInUp
+  | 気になる人のつぶやきをのぞいてみよう！
+p.text-center.wowload.fadeInLeft
+  | ※写真をクリックするとその人のつぶやきを見ることができます。
 .row.grid.team.wowload.fadeInUpBig
-  .col-sm-3.col-xs-6
-    figure.effect-chico
-      img.img-responsive[src="images/team/8.jpg" alt="img01"]
-      figcaption
-        p
-          b
-            | Barbara Husto
-          br
-          | Senior Designer
-          br
-          br
-          a[href="#"]
-            i.fa.fa-dribbble
-          a[href="#"]
-            i.fa.fa-facebook
-          a[href="#"]
-            i.fa.fa-twitter
-  .col-sm-3.col-xs-6
-    figure.effect-chico
-      img[src="images/team/10.jpg" alt="img01"]
-      figcaption
-        p
-          b
-            | Barbara Husto
-          br
-          | Senior Designer
-          br
-          br
-          a[href="#"]
-            i.fa.fa-dribbble
-          a[href="#"]
-            i.fa.fa-facebook
-          a[href="#"]
-            i.fa.fa-twitter
-  .col-sm-3.col-xs-6
-    figure.effect-chico
-      img[src="images/team/12.jpg" alt="img01"]
-      figcaption
-        p
-          b
-            | Barbara Husto
-          br
-          | Senior Designer
-          br
-          br
-          a[href="#"]
-            i.fa.fa-dribbble
-          a[href="#"]
-            i.fa.fa-facebook
-          a[href="#"]
-            i.fa.fa-twitter
-  .col-sm-3.col-xs-6
-    figure.effect-chico
-      img[src="images/team/17.jpg" alt="img01"]
-      figcaption
-        p
-          b
-            | Barbara Husto
-          br
-          | Senior Designer
-          br
-          br
-          a[href="#"]
-            i.fa.fa-dribbble
-          a[href="#"]
-            i.fa.fa-facebook
-          a[href="#"]
-            i.fa.fa-twitter
+  - @users.each do |user|
+    .col-sm-3.col-xs-6
+      .content_user 
+        = link_to "/users/#{user.id}" do
+          = image_tag user.avatar_file_name
+          p #{user.name}
+
+= paginate(@users)
+
+        / = simple_format(image_tag user.image_url)
+          / span.name = user.image_tag
+          /   a href=""
+          /     span = post.user.nickname
+
+
+

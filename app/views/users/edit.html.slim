@@ -2,20 +2,18 @@
   .col-lg-12
     = form_for current_user do |f|
       h2
-        | プロフィール画像
+        | プロフィール編集
       .form-group.file
-        = f.file_field :avatar, class: "form-control floating-label", placeholder: "画像アップロード"
-      h2
-        | 登録情報
+        = f.file_field :avatar, class: "form-control floating-label", placeholder: "プロフィール画像を選ぶ"
       .form-group
         .col-lg-6
           = f.text_field :family_name, placeholder: "姓", class: "form-control"
         .col-lg-6
           = f.text_field :first_name, placeholder: "名", class: "form-control"
+      / .form-group
+      /   .col-lg-12
+      /     = f.text_field :family_name_kana, placeholder: "ニックネーム", class: "form-control"
+        / .col-lg-6
+        /   = f.text_field :first_name_kana, placeholder: "メイ", class: "form-control"
       .form-group
-        .col-lg-6
-          = f.text_field :family_name_kana, placeholder: "セイ", class: "form-control"
-        .col-lg-6
-          = f.text_field :first_name_kana, placeholder: "メイ", class: "form-control"
-      .form-group
-        = f.submit "完了", class: "btn btn-primary withripple"
+        = f.submit "更新", class: "btn btn-primary withripple"

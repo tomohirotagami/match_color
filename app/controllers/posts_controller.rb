@@ -14,6 +14,9 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
+      if post.user_id == current_user.id
+        post.update(update_params)
+      end
   end
 
   def destroy
@@ -25,11 +28,18 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments.includes(:user)
+  end
+
+  def update_params
+    params.permit(:image, :text)
   end
 
   private
-  def create_params
-    params.permit(:image, :text)
+  def post_params
+    params.require(:post).permit(:image, :text)
   end
+
+
 
 end

@@ -1,0 +1,365 @@
+#top-nav {    /*ヘッダー*/
+  text-decoration: none;
+  border-bottom: 3px double; color: #FF5F17;
+  background-color: #FFDDFF;
+}
+
+body {
+/*  background-image: url('PSYCHO-PASS.png');
+*/background-color: white;
+/*  background-repeat: no-repeat;
+  background-attachment: fixed;*/
+  background-position: 50% 50%;
+  margin-top: 70px;
+  font-size: px;
+  color: #333;
+  margin: 0 auto;
+}
+
+.container {    /*全体のボディ*/
+  @include boxBase(20px 0 ,30px);
+  box-shadow: 0 0 10px rgba($black,0.2);
+  background-color: $white;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+/*  min-height: 618px;
+*/}
+
+footer {
+  text-align: center;
+  height: 50px;
+  @include boxBase;
+  color: $gray;
+  padding-top: 12.5px;
+}
+
+
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+.text-center.wowload.fadeInUp {   /*トップ画面のタイトル*/
+  margin-top: 100px;
+}
+
+.text-center.wowload.fadeInLeft {   /*トップ画面の注意書き*/
+  margin-bottom: 38px;
+}
+
+.image img {    /*トップのアイコン画像*/
+  height: 150px;
+  width: 150px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  border: 3px solid #00FF00;
+  margin: 0 auto;
+}
+
+.contents.row {   /*マイページの投稿全体*/
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.more_list {    /*マイページの詳細・編集ボタン*/
+  position: relative;
+  margin-bottom: -65px;
+  z-index: 20;
+  width: 80px;
+}
+
+.more_list ul {   /*マイページの詳細・編集ボタン*/
+  position: relative;
+  z-index: 50;
+}
+
+.content_post {   /*マイページの各投稿*/
+  position: relative;
+  border: thin silver ridge; 
+  padding: 30px 0px 40px 0px; 
+  margin-right: 30px; 
+  margin-left: 30px;
+}
+
+.content_post p {   /*マイページの投稿文字*/
+  width:40%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.content_post img {   /*マイページの投稿画像*/
+width:40%;
+height:auto;
+}
+
+.container#new_post {   /*投稿ページのボディ*/
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.image_post input {   /*投稿ページの画像選択フォーム*/
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.container#new_post h3 {    /*投稿ページの”つぶやき”*/
+  text-decoration: underline;
+}
+
+.textarea {
+    margin-left: 70px;
+}
+
+.success {
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.success p {
+  font-size:25px;
+}
+
+.content_post#comment {
+  margin-top: 55px;
+  margin-bottom: 25px;
+}
+
+.comments {
+  width:40%;
+  margin: 0 auto;
+}
+
+/*.comments_name {
+  padding: 0px 0;
+  margin: 0;
+}*/
+
+.form {
+  margin-top: 10px;
+  margin-bottom: 80px;
+}
+
+.comments_name strong {
+  font-size: 20px;
+}
+
+.comments p {
+  margin-bottom: 30px;
+}
+
+.row.form {   /*プロフィール編集*/
+  margin-top: 100px;
+}
+
+.row.form h2 {    /*プロフィール編集文字*/
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.form-group.file {    /*プロフィール編集画像選択*/
+  width: 160px;
+  height: 70px;
+  margin: auto;
+}
+
+.floating-label {   /*プロフィール編集画面画像選択ボタン装飾*/
+  background-color: ButtonHighlight;
+  border: medium silver ridge; 
+}
+
+.form-group {   /*プロフィール編集画面名前フォーム*/
+  width: 50%;
+  height: 100px;
+  margin: auto;
+}
+
+.login_back {   /*ログイン画面*/
+  min-height: 618px; 
+  background-image: url("background_image.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.log-in {   /*ログイン画面オブジェクト*/
+  padding-top: 60px;
+}
+
+.new_user {   /*ログイン画面入力フォーム*/
+  margin-top: 30px;
+}
+
+.checkbox {   /*ログイン画面チェックボックス*/
+  font-size: 15px;
+}
+
+.login_button {
+  margin-bottom: 15px;
+}
+
+.login_link {   /*Facebookログイン*/
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.login_link a{    /*Facebookログイン*/
+  font-size: 15px;
+  color: white;
+  padding: 7px 15px 7px 15px;
+  border: medium #305097 ridge;
+  background-color: #305097
+}
+
+.new_login a{   /*新規登録リンク*/
+ font-size: 17px; 
+}
+
+.regist_back {    /*新規登録画面*/
+  min-height: 618px; 
+  background-image: url("background_image.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.log-in-inner h3 {    /*新規登録画面”会員登録”*/
+  text-decoration: underline;
+  margin-top: 20px;
+  margin-bottom: -10px;
+}
+
+.form-control {
+  margin-top: -10px;
+}
+
+#pass {
+  margin-top: -30px;
+}
+
+#repass {
+  margin-top: -30px;
+}
+
+.actions {
+  margin-top: -30px;
+}
+
+#new_login {
+  padding-bottom: 20px;
+}
+/*@font-face {
+    font-family: 'ちはやゴシック';
+    src: url('chihaya.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+
+
+/*#ava {
+  height: 200px;
+  width: 200px;
+}*/
+
+.user_profile {
+  padding-top: 100px;
+}
+
+.success {
+  @include boxBase(20px 0 ,30px);
+  box-shadow: 0 0 10px rgba($black,0.2);
+  background-color: $white;
+  box-sizing: border-box;
+  text-align: center;
+  h3 {
+    @include baseMargin;
+  }
+}
+form {
+  h3 {
+    @include baseMargin(0 0 20px);
+    text-align: center;
+    font-weight: normal;
+    font-size: 20px;
+    color: $dark;
+  }
+  input,textarea {
+    width: 100%;
+    @include boxBase(5px 0 15px,10px);
+    border: 1px solid $gray;
+    border-radius: 5px;
+    font-family: "游ゴシック", "YuGothic";
+  }
+  input[type="submit"] {
+    @extend .transition;
+    background-color: $accent;
+    border-radius: 20px;
+    color: #fff;
+    border: 0;
+    font-size: 18px;
+    &:hover {
+      background-color: lighten($accent, 10%);
+    }
+  }
+}
+
+.comments {
+  padding: 5px;
+  margin-top: 15px;
+  a {
+    color: $accent;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/*.content_user {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  border: 3px solid #FFCCFF ;
+}*/
+
+.col-sm-3 {
+  height: 188px;
+}
+
+.content_user {
+  text-align: center;
+}
+
+.content_user img {
+  height: 150px;
+  width: 150px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  border: 2px solid #00FF00;
+  margin: -10px;
+}
+
+.content_user img:hover { 
+  -webkit-transform: rotate(20deg);
+  -moz-transform: rotate(20deg);
+  -o-transform: rotate(20deg);
+  -ms-transform: rotate(20deg);
+  transform: rotate(20deg);
+}
+
+
+
+
+
+

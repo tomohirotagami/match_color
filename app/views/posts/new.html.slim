@@ -1,6 +1,10 @@
 .contents.row
-  = form_for('/posts', method: :post) do
-    h3 つぶやき
-    input placeholder="Image Url" type="text" name="image"
-    textarea cols="30" name="text" placeholder="text" rows="10"
-    input type="submit" value="つぶやく"
+  .container#new_post
+    = form_tag('/posts', method: :post, multipart: true) do
+      h3 いまの気持ちをつぶやこう！
+      p ※画像と一緒じゃないと画面に表示されません。
+      .image_post 
+        input placeholder="Image Url" type="file" name="image"
+      .textarea
+        textarea cols="40" name="text" placeholder="いまどんな気分？" rows="10"
+        input type="submit" value="つぶやく"

@@ -9,15 +9,13 @@ html[lang="ja"]
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-  body
     script[type="text/javascript" charset="utf-8"]
       |  $(function(){ $.material.init(); }); 
-    = render partial: 'common/header'
+  body
+    header
+      = render partial: 'common/header'
     .container
-      .row
-        .col-lg-12
-          = bootstrap_flash
-          = yield
-      footer.row.text-center
-        p
-          | © 2016 ふぁんたじすた。
+      = bootstrap_flash
+      = yield
+    footer
+      | © 2016 ふぁんたじすた。

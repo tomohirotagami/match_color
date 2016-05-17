@@ -1,43 +1,40 @@
 - if user_signed_in?
-  header#navigation
-    .navbar.navbar-inverse.navbar-fixed-top[role="banner"]
-      .container
-        .navbar-header
-          button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
-            span.sr-only
-              | Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          = link_to root_path, :class => 'navbar-brand' do
-            = image_tag 'logo.png'
-            small.hidden-xs.hidden-sm
-              | まだ、ここにない、出会い
-          / a.navbar-brand[href="index.html"]
-          / h1
-            / img[src="images/logo.png" alt="logo"]
-        .collapse.navbar-collapse
-          ul.nav.navbar-nav.navbar-right
-            - if @page
-              li
-                = link_to "マイページ", user_path(current_user)
-            - if @show
-              li.scroll
-                = link_to 'さがす', root_path
-              li.scroll
-                = link_to "つぶやく", '/posts/new'   
-              li.dropdown
-                a.dropdown-toggle[href="#" data-toggle="dropdown" role="button" aria-expanded="false"]
-                  | アカウント 
-                  span.caret
-                ul.dropdown-menu[role="menu"]
-                  li
-                    = link_to "プロフィール編集", edit_user_path(current_user)
-                  li
-                    = link_to "ログアウト", destroy_user_session_path, method: :delete
-            - if @edit
-              li.scroll
-                = link_to "マイページ", user_path(current_user)
-            - if @post
-              li.scroll
-                = link_to "マイページ", user_path(current_user)
+  .navbar-wrapper
+    .container
+      #top-nav.navbar.navbar-default.navbar-fixed-top[role="navigation"]
+        .container
+          .navbar-header
+            button.navbar-toggle.collapsed[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
+              span.sr-only
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            = link_to root_path, :class => 'navbar-brand' do
+              = image_tag 'recruit-logo.png'
+            / small.hidden-xs.hidden-sm
+            /   | ほら、そこにある、出会い
+          .navbar-collapse.collapse
+            ul.nav.navbar-nav.navbar-right.scroll
+              - if @page
+                li
+                  = link_to "マイページ", user_path(current_user)
+              - if @show
+                li
+                  = link_to 'さがす', root_path
+                li
+                  = link_to "つぶやく", '/posts/new'
+                li.dropdown
+                  a.dropdown-toggle[href="#" data-toggle="dropdown" role="button" aria-expanded="false"]
+                    | アカウント 
+                    span.caret
+                  ul.dropdown-menu[role="menu"]
+                    li
+                      = link_to "プロフィール編集", edit_user_path(current_user)
+                    li
+                      = link_to "ログアウト", destroy_user_session_path, method: :delete
+              - if @edit
+                li
+                  = link_to "マイページ", user_path(current_user)
+              - if @post
+                li
+                  = link_to "マイページ", user_path(current_user)

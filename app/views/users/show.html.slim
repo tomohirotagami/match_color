@@ -1,27 +1,26 @@
 .row.form.user_profile
   .col-lg-12
-    |  <div class="image" style="background-image: url(
-    = @user.avatar.url(:medium)
-    | );">
-  h2
-    = @user.name
-    span
-      = @user.name_kana
+    .image#ava 
+      = image_tag @user.avatar_file_name
+    h2
+      = @user.name
+
 
 .contents.row
   - @posts.each do |post|
     .content_post style="background-image: url(= post.image);"
-      ul class="more_list"
-        li
-          = link_to '詳細', "/posts/#{post.id}", method: :get
-        li
-          = link_to '編集', "/posts/#{post.id}/edit", method: :get
-        li
-          = link_to '削除', "/posts/#{post.id}", method: :delete
+      -if user_signed_in? && current_user.id == post.user_id
+        / .more
+        /   span = image_tag 'arrow_top.png'
+        / ul.more_list
+        /   li
+        /     = link_to '詳細', "/posts/#{post.id}", method: :get
+            / li
+            /   = link_to '編集', "/posts/#{post.id}/edit", method: :get
+            / li
+            /   = link_to '削除', "/posts/#{post.id}", method: :delete
       = simple_format(post.text)
-      = image_tag post.image 
-      span.name
-        a href="/users/= post.user_id"
+      = link_to image_tag("#{post.image}"), "/posts/#{post.id}"
   = paginate(@posts)
 
 
