@@ -220,6 +220,10 @@ height:auto;
   background-color: #305097
 }
 
+.sign_up_logo img{
+  width: 80%;
+}
+
 .new_login a{   /*新規登録リンク*/
  font-size: 17px; 
 }
