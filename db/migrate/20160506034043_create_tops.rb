@@ -1,3 +1,4 @@
+# このカラムはいずれ使う
 class CreateTops < ActiveRecord::Migration
   def change
     create_table :tops do |t|

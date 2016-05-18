@@ -1,6 +1,7 @@
+/  投稿詳細画面
 .contents.row
   .content_post#comment style="background-image: url(= @post.image);"
-    - if user_signed_in? && current_user.id == @post.user_id
+    - if user_signed_in? && current_user.id == @post.user_id #自分の投稿にのみ編集・削除ボタンを表示
       .more_list
         ul
           li
@@ -11,7 +12,7 @@
       = simple_format(@post.text)
       = image_tag @post.image 
   .container
-    - if current_user
+    - if current_user   # 以下コメント部分
       .form
         = form_tag("/posts/#{@post.id}/comments", method: :post) do
           textarea cols="30" name="text" placeholder="コメントする" rows="2"

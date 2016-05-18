@@ -6,16 +6,11 @@ p.text-center.wowload.fadeInLeft
   - @users.each do |user|
     .col-sm-3.col-xs-6
       .content_user 
-        = link_to "/users/#{user.id}" do
+        = link_to "/users/#{user.id}" do  # アイコンをクリックするとそれぞれのマイページに遷移
           = image_tag user.avatar_file_name
           p #{user.name}
 
 = paginate(@users)
-
-        / = simple_format(image_tag user.image_url)
-          / span.name = user.image_tag
-          /   a href=""
-          /     span = post.user.nickname
 
 
 

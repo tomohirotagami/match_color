@@ -4,21 +4,10 @@
       = image_tag @user.avatar_file_name
     h2
       = @user.name
-
-
+/ 自分の投稿をマイページに表示
 .contents.row
   - @posts.each do |post|
     .content_post style="background-image: url(= post.image);"
-      -if user_signed_in? && current_user.id == post.user_id
-        / .more
-        /   span = image_tag 'arrow_top.png'
-        / ul.more_list
-        /   li
-        /     = link_to '詳細', "/posts/#{post.id}", method: :get
-            / li
-            /   = link_to '編集', "/posts/#{post.id}/edit", method: :get
-            / li
-            /   = link_to '削除', "/posts/#{post.id}", method: :delete
       = simple_format(post.text)
       = link_to image_tag("#{post.image}"), "/posts/#{post.id}"
   = paginate(@posts)
