@@ -34,7 +34,6 @@ footer {
   padding-top: 12.5px;
 }
 
-
 h1,h2,h3,h4,h5,h6,p {
   padding: 10px 0;
   margin: 0;
@@ -45,11 +44,13 @@ ul li {   /*編集・削除ボタンの点を消す*/
 }
 
 .text-center.wowload.fadeInUp {   /*トップ画面のタイトル*/
-  margin-top: 75px;
+  margin-top: 65px;
 }
 
 .text-center.wowload.fadeInLeft {   /*トップ画面の注意書き*/
   margin-bottom: 38px;
+  border-bottom: 2px solid; color: #black;
+
 }
 
 .col-sm-3 {   /*トップのユーザーアイコンの高さ指定*/
@@ -74,9 +75,24 @@ ul li {   /*編集・削除ボタンの点を消す*/
   transform: rotate(20deg);
 }
 
+#user_show {
+  margin-top: 10px;
+  margin-bottom: -50px;
+}
+
 .contents.row {   /*マイページの投稿全体*/
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+#ava img {   /*マイページのユーザー表示を丸く*/
+  height: 150px;
+  width: 150px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  border: 2px solid #00FF00;
+  margin: -10px;
 }
 
 .more_list {    /*マイページの編集・削除ボタン*/
@@ -182,6 +198,10 @@ height:auto;
   margin: auto;
 }
 
+.form-control {
+  margin-bottom: 20px;
+}
+
 .login_back {   /*ログイン画面*/
   min-height: 618px; 
   background-image: url("background_image.jpg");
@@ -192,7 +212,7 @@ height:auto;
 }
 
 .log-in {   /*ログイン画面オブジェクト*/
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 .new_user {   /*ログイン画面入力フォーム*/
@@ -235,6 +255,10 @@ height:auto;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+
+.log-up {   /*新規登録画面オブジェクト*/
+  padding-top: 40px;
 }
 
 .log-in-inner h3 {    /*新規登録画面”会員登録”*/

@@ -12,13 +12,14 @@
       = simple_format(@post.text)
       = image_tag @post.image 
   .container
-    = form_tag(action: :purchase, method: :post) do
-    script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="= WEBPAY_PUBLIC_KEY"  #webpay
+   
     - if current_user   # 以下コメント部分
       .form
         = form_tag("/posts/#{@post.id}/comments", method: :post) do
           textarea cols="30" name="text" placeholder="コメントする" rows="2"
           input type="submit" value="コメントを送る"
+        /* = form_tag(action: :purchase, method: :post) do
+          script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="= WEBPAY_PUBLIC_KEY" */ #webpay
     .comments   
       - if @comments
         - @comments.each do |comment|
