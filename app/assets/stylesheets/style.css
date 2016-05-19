@@ -318,8 +318,15 @@ form {
   }
 }
 
-
-
+/*doorページ*/
+.door {
+  background-image: url("background_image.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 1000px;
+}
 
 
 

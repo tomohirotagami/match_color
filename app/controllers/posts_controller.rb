@@ -35,6 +35,11 @@ class PostsController < ApplicationController
     params.permit(:image, :text)
   end
 
+  def purchase    #webpay
+    webpay = WebPay.new(WEBPAY_SECRET_KEY)
+    webpay.charge.create(currency: 'jpy', amount: 1000, card: params['webpay-token'])
+  end
+
   private
   def post_params
     params.require(:post).permit(:image, :text)
